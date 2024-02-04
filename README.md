@@ -13,7 +13,7 @@ Delve into the sacred past with our comprehensive history section, offering a vi
 Elevate your spiritual experience with the integrated music player on the second screen. Imbibe the divine energy by listening to soul-soothing bhajans dedicated to Lord Ram. Our music player is designed for a seamless and immersive auditory experience, powered by the latest audio technologies.
 
 ## ScreenRecording
-https://github.com/Amrut-03/ram_mandir/assets/125724968/a31db2b7-a6bf-44a2-bc12-a8a021d564f0
+https://github.com/Amrut-03/ram_mandir/assets/125724968/6e63c831-6f05-4838-8af1-df4799d40a45
 ## Installation
 
 1. Clone the repository:
