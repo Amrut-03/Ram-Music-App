@@ -19,4 +19,4 @@ https://github.com/Amrut-03/ram_mandir/assets/125724968/a31db2b7-a6bf-44a2-bc12-
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Amrut-03/Ram_mandir
+   git clone https://github.com/Amrut-03/ram_mandir
