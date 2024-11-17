@@ -20,3 +20,7 @@ https://github.com/Amrut-03/ram_mandir/assets/125724968/6e63c831-6f05-4838-8af1-
 
    ```bash
    git clone https://github.com/Amrut-03/ram_mandir
+2. APK file drive link:
+
+   ```bash
+   git clone https://github.com/Amrut-03/ram_mandir
