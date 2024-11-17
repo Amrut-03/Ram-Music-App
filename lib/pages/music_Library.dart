@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_player/bottom_nav.dart';
-import 'package:music_player/music_page.dart';
+import 'package:music_player/pages/music_page.dart';
 
 class MusicPlayer extends StatefulWidget {
   const MusicPlayer({super.key});
@@ -25,7 +24,6 @@ class _MusicPlayerState extends State<MusicPlayer> {
             Colors.black,
           ])),
       child: Scaffold(
-        bottomNavigationBar: BottomNavBar(isPast: isPast),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           automaticallyImplyLeading: false,
@@ -44,25 +42,27 @@ class _MusicPlayerState extends State<MusicPlayer> {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               Music_tile(
                   title: 'Hamare Sath Shree Raghunath',
                   subtitle: 'Agam Aggarwal',
-                  thumbnail: 'images/ram.jpg',
+                  thumbnail: 'images/hamare_sath.jpg',
                   onClick: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MusicPage(
-                                  title: 'Hamare Sath Shree Raghunath',
-                                  subtitle: 'Agam Aggarwal',
-                                  thumbnail: 'images/ram.jpg',
-                                  music: 'ram_2.mp3',
-                                )));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MusicPage(
+                          title: 'Hamare Sath Shree Raghunath',
+                          subtitle: 'Agam Aggarwal',
+                          thumbnail: 'images/hamare_sath.jpg',
+                          music: 'ram_2.mp3',
+                        ),
+                      ),
+                    );
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
                   title: 'He Ram He Ram',
@@ -70,17 +70,19 @@ class _MusicPlayerState extends State<MusicPlayer> {
                   thumbnail: 'images/he_ram_he_ram.jpg',
                   onClick: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MusicPage(
-                                  title: 'He Ram He Ram',
-                                  subtitle: 'Jagjit Singh',
-                                  thumbnail: 'images/he_ram_he_ram.jpg',
-                                  music: 'Hey_Ram_Hey_Ram.mp3',
-                                )));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MusicPage(
+                          title: 'He Ram He Ram',
+                          subtitle: 'Jagjit Singh',
+                          thumbnail: 'images/he_ram_he_ram.jpg',
+                          music: 'Hey_Ram_Hey_Ram.mp3',
+                        ),
+                      ),
+                    );
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
                   title: 'Raghupati Raghava Rajaram',
@@ -97,8 +99,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                                   music: 'Raghupati_Raghav_Raja_Ram.mp3',
                                 )));
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
                   title: 'Ram Ayenge',
@@ -115,8 +117,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                                   music: 'Ram_Aayenge.mp3',
                                 )));
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
                   title: 'Ram_Siya_Ram',
@@ -133,8 +135,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                                   music: 'Ram_Siya_Ram.mp3',
                                 )));
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
                   title: 'Mere Ghar Ram Aye Hain',
@@ -152,8 +154,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                                   music: 'Mere_Ghar_Ram_Aaye_Hain.mp3',
                                 )));
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
                   title: 'Ram Ram Jai Raja Ram',
@@ -167,14 +169,14 @@ class _MusicPlayerState extends State<MusicPlayer> {
                                   title: 'Ram Ram Jai Raja Ram',
                                   subtitle: 'Shankar Mahadevan',
                                   thumbnail: 'images/ram_ram_jai_raja_ram.jpg',
-                                  music: 'Ram_Ram_Jai_Raja.mp3',
+                                  music: 'Ram_Ram_Jai_Raja_Ram.mp3',
                                 )));
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Music_tile(
-                  title: 'Ramayan Choipaya',
+                  title: 'Ramayan Chaupai',
                   subtitle: 'kumar vishu',
                   thumbnail: 'images/shri_ram_20.jpg',
                   onClick: () {
@@ -185,11 +187,11 @@ class _MusicPlayerState extends State<MusicPlayer> {
                                   title: 'Ramayan Choipaya',
                                   subtitle: 'kumar vishu',
                                   thumbnail: 'images/shri_ram_20.jpg',
-                                  music: 'Ramayan_Chaupai_.mp3',
+                                  music: 'Ramayan_Chaupai.mp3',
                                 )));
                   }),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
             ]),
           ),
@@ -235,19 +237,20 @@ class _Music_tileState extends State<Music_tile> {
     return InkWell(
       onTap: () => widget.onClick(),
       child: Container(
-        height: 80,
-        width: 370,
+        height: 80.h,
+        width: 370.w,
         decoration: BoxDecoration(
-            color: Colors.black, borderRadius: BorderRadius.circular(10)),
+            color: Colors.black, borderRadius: BorderRadius.circular(10.r)),
         child: Center(
           child: ListTile(
             leading: Container(
-              height: 60,
-              width: 60,
+              height: 60.h,
+              width: 60.w,
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5.r)),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(5.r),
                 child: Image.asset(
                   widget.thumbnail,
                   fit: BoxFit.cover,

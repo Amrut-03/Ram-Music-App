@@ -1,9 +1,4 @@
-class History {
-  String title;
-  String description;
-
-  History({required this.title, required this.description});
-}
+import 'package:music_player/model/model.dart';
 
 class historyList {
   static List<History> historyData = [

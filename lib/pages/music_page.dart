@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MusicPage extends StatefulWidget {
@@ -27,12 +28,12 @@ class _MusicPageState extends State<MusicPage> {
 
   String formatTime(Duration duration) {
     String twoDigits(int n) => n.toString().padLeft(2, '0');
-    final hours = twoDigits(duration.inHours);
+    // final hours = twoDigits(duration.inHours);
     final minutes = twoDigits(duration.inMinutes.remainder(60));
     final seconds = twoDigits(duration.inSeconds.remainder(60));
 
     return [
-      if (duration.inHours > 0) hours,
+      // if (duration.inHours > 0) hours,
       minutes,
       seconds,
     ].join(':');
@@ -83,26 +84,26 @@ class _MusicPageState extends State<MusicPage> {
         backgroundColor: Colors.transparent,
         body: Center(
           child: Container(
-            height: 500,
-            width: 370,
+            height: 500.h,
+            width: 370.w,
             decoration: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(20)),
+                color: Colors.black, borderRadius: BorderRadius.circular(20.r)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
                   child: Padding(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20.w),
                     child: Container(
-                      height: 200,
-                      width: 200,
+                      height: 200.h,
+                      width: 200.w,
                       decoration: BoxDecoration(
                           border:
-                              Border.all(color: Colors.deepOrange, width: 2),
+                              Border.all(color: Colors.deepOrange, width: 2.w),
                           color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(10.r)),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10.r),
                         child: Image.asset(
                           widget.thumbnail,
                           fit: BoxFit.cover,
@@ -114,15 +115,15 @@ class _MusicPageState extends State<MusicPage> {
                 Center(
                   child: Text(
                     widget.title,
-                    style:
-                        GoogleFonts.ubuntu(fontSize: 20, color: Colors.white),
+                    style: GoogleFonts.ubuntu(
+                        fontSize: 20.sp, color: Colors.white),
                   ),
                 ),
                 Center(
                   child: Text(
                     widget.subtitle,
-                    style:
-                        GoogleFonts.ubuntu(fontSize: 15, color: Colors.white),
+                    style: GoogleFonts.ubuntu(
+                        fontSize: 15.sp, color: Colors.white),
                   ),
                 ),
                 Slider(
@@ -155,7 +156,7 @@ class _MusicPageState extends State<MusicPage> {
                   },
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -171,23 +172,24 @@ class _MusicPageState extends State<MusicPage> {
                 ),
                 CircleAvatar(
                   backgroundColor: Colors.deepOrange,
-                  maxRadius: 35,
+                  maxRadius: 35.r,
                   child: Padding(
-                    padding: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(5.w),
                     child: IconButton(
-                        icon: Icon(
-                          isPlaying ? Icons.pause : Icons.play_arrow,
-                          color: Colors.white,
-                        ),
-                        iconSize: 45,
-                        onPressed: () async {
-                          if (isPlaying) {
-                            await audioplayer.pause();
-                          } else {
-                            String path = widget.music;
-                            await audioplayer.play(AssetSource(path));
-                          }
-                        }),
+                      icon: Icon(
+                        isPlaying ? Icons.pause : Icons.play_arrow,
+                        color: Colors.white,
+                      ),
+                      iconSize: 45.w,
+                      onPressed: () async {
+                        if (isPlaying) {
+                          await audioplayer.pause();
+                        } else {
+                          String path = widget.music;
+                          await audioplayer.play(AssetSource(path));
+                        }
+                      },
+                    ),
                   ),
                 )
               ],
